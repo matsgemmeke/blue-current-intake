@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+
+.btn {
+  border-radius: 8px;
+}
+
+.nav-btn button {
+  background-color: #3399ff;
+  text-align: left;
+  width: 100%;
+}
+
+.nav-btn h6 {
+  color: #3399ff;
+  font-size: 0.938rem;
+  font-weight: normal;
+  margin-top: 0.5rem;
+  float: left;
+}
+
+.nav-btn i {
+  color: #0074e8;
+}
+
+.nav-btn p {
+  color: #6b8996;
+  font-size: 0.75rem;
+}
+
+.content {
+  background-color: #e5f2ff;
+  border-radius: 10px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.content-text {
+  padding-top: 7.25rem;
+}
+
+.content-text h3 {
+  color: #093550;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.content-text h6 {
+  color: #2aa5ff;
+  font-size: 1.125rem;
+}
+
+.content-text p {
+  color: #58727e;
+  font-size: 1rem;
+}

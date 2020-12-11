@@ -1,0 +1,9 @@
+.progress {
+  background-color: white;
+}
+
+.question-progress-bar {
+  margin-top: 1.25rem;
+  position: relative;
+  top: 8px;
+}

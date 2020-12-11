@@ -1,0 +1,57 @@
+<div class="container">
+  <!-- Progress bar -->
+  <app-progress-bar [percentage]="0.17"></app-progress-bar>
+  <!-- Main content -->
+  <div class="row content">
+    <div class="col-12 col-md-6">
+      <div class="content-text">
+        <h6>Motorhuis laadpunt samenstellen</h6>
+        <h3>Wat voor laadpunt wil je?</h3>
+        <p>Tekst</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="question-option">
+        <img
+          src="assets/img/hidden.png"
+          srcset="assets/img/hidden@2x.png 2x, assets/img/hidden@3x.png 3x"
+          alt="Hidden"
+          class="img-fluid"/>
+        <div class="custom-control custom-radio img-display">
+          <input type="radio" class="custom-control-input" id="radioHidden" name="chargingPointType"/>
+          <label class="custom-control-label" for="radioHidden">Hidden</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="question-option">
+        <img
+          src="assets/img/u-move.png"
+          srcset="assets/img/u-move@2x.png 2x, assets/img/u-move@3x.png 3x"
+          alt="U:Move"
+          class="img-fluid"/>
+        <div class="custom-control custom-radio img-display">
+          <input type="radio" class="custom-control-input" id="radioUMove" name="chargingPointType"/>
+          <label class="custom-control-label" for="radioUMove">U:Move</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Navigation buttons -->
+  <div class="row" id="buttons">
+    <div class="col-5 offset-1 col-md-2 offset-md-1">
+      <button type="button" class="btn btn-outline-primary bg-light">
+        <i class="fa fa-arrow-left"></i> Vorige
+      </button>
+    </div>
+    <div class="col-5 col-md-2 offset-md-6">
+      <div class="nav-btn">
+        <button type="button" class="btn btn-primary" (click)="onClickNext()">
+          Volgende
+          <i class="fa fa-arrow-right"></i>
+        </button>
+        <h6>Jouw keuze {{ choiceAmount | currency: 'EUR': 'symbol' : '1.0-0' }}</h6>
+      </div>
+    </div>
+  </div>
+</div>

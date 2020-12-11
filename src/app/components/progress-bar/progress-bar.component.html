@@ -1,0 +1,12 @@
+<div class="row question-progress-bar">
+  <div class="col-10 col-sm-6 col-md-3 offset-1">
+    <div class="progress">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        [ngStyle]="{ 'width': percentage * 100 + '%' }">
+        <span>{{ percentage * 100 }}%</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.img-display label {
+  color: #093550;
+  font-weight: bold;
+}
+
+.img-display {
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgb(255, 255, 255);
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 65%;
+  width: 50%;
+}
+
+.question-option {
+  padding-bottom: 5rem;
+  padding-top: 4rem;
+}
+
+#buttons {
+  bottom: 20px;
+  position: relative;
+}

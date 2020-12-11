@@ -1,0 +1,74 @@
+#buttons {
+  bottom: 20px;
+  position: relative;
+}
+
+#contactForm {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(13, 38, 53, 0.19);
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  padding: 3rem 4rem 1.5rem 2rem;
+}
+
+#contactForm .input-group {
+  margin-right: 10px;
+}
+
+#contactForm input {
+  border: solid 1px #b1cde9;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1.125rem 1rem 1rem 0.875rem;
+}
+
+#contactForm input::placeholder {
+  color: #6b9bc4;
+  font-size: 0.75rem;
+  opacity: 1;
+  vertical-align: center;
+}
+
+#contactForm label {
+  color: #003e5b;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+#feature-list h5 {
+  color: #3399ff;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+#feature-list h6 {
+  color: #3399ff;
+  font-size: 1rem;
+}
+
+#feature-list ul li {
+  color: #617d8a;
+  margin: 5px;
+}
+
+#feature-list ul li i {
+  color: #3399ff;
+}
+
+#feature-overview {
+  margin-top: 5rem;
+}
+
+#offer-link {
+  color: #58727e;
+  vertical-align: middle;
+}
+
+@media (max-width:600px) {
+  #contactForm {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

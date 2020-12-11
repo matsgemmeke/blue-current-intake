@@ -1,0 +1,175 @@
+<div class="container">
+  <!-- Progress bar -->
+  <app-progress-bar [percentage]="1"></app-progress-bar>
+  <!-- Main content -->
+  <div class="row content">
+    <div class="col-12 col-lg-6">
+      <div class="row">
+        <div class="col-12 col-lg-9">
+          <div class="content-text">
+            <h6>Motorhuis laadpunt samenstellen</h6>
+            <h3>Gefeliciteerd!</h3>
+            <p>Je hebt een pracht oplaadpunt samengesteld! Vul jouw gegevens in en wij nemen graag jouw setting door. Tot snel!</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="feature-overview">
+        <div class="col-12 col-md-6">
+          <img
+            src="assets/img/u-move.png"
+            srcset="assets/img/u-move@2x.png 2x, assets/img/u-move@3x.png 3x"
+            alt="U:Move"
+            class="img-fluid"/>
+        </div>
+        <div class="col-12 col-md-6" id="feature-list">
+          <ul class="list-unstyled">
+            <li *ngFor="let feature of featureList">
+              <i class="fa fa-check"></i> {{ feature }}
+            </li>
+          </ul>
+          <h6>Jouw keuze</h6>
+          <h5>{{ totalAmount | currency: 'EUR': 'symbol' : '1.0-0' }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <form id="contactForm" (ngSubmit)="onSubmitOrder(form)" #form="ngForm">
+        <div class="form-group">
+          <label for="inputFirstName">Naam</label>
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': inputFirstName.touched && inputFirstName.errors }"
+            id="inputFirstName"
+            placeholder="Naam"
+            name="firstName"
+            ngModel
+            required
+            #inputFirstName="ngModel"/>
+          <!-- Error handling for first name input -->
+          <div class="alert alert-danger" *ngIf="inputFirstName.touched && inputFirstName.errors">
+            <div *ngIf="inputFirstName.errors.required">Voer uw voornaam in.</div>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': inputLastName.touched && inputLastName.errors }"
+            id="inputLastName"
+            placeholder="Achternaam"
+            name="lastName"
+            ngModel
+            required
+            #inputLastName="ngModel"/>
+          <!-- Error handling for last name input -->
+          <div class="alert alert-danger" *ngIf="inputLastName.touched && inputLastName.errors">
+            <div *ngIf="inputLastName.errors.required">Voer uw achternaam in.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPhoneNumber">Contact</label>
+          <input
+            type="tel"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': inputPhoneNumber.touched && inputPhoneNumber.errors }"
+            id="inputPhoneNumber"
+            placeholder="Telefoonnummer"
+            name="phoneNumber"
+            ngModel
+            required
+            #inputPhoneNumber="ngModel"/>
+          <!-- Error handling for phone number input -->
+          <div class="alert alert-danger" *ngIf="inputPhoneNumber.touched && inputPhoneNumber.errors">
+            <div *ngIf="inputPhoneNumber.errors.required">Voer uw telefoonnummer in.</div>
+          </div>
+          <input
+            type="email"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': inputEmail.touched && inputEmail.errors }"
+            id="inputEmail"
+            placeholder="E-mail"
+            name="email"
+            ngModel
+            required
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            #inputEmail="ngModel"/>
+          <!-- Error handling for email input -->
+          <div class="alert alert-danger" *ngIf="inputEmail.touched && inputEmail.errors">
+            <div *ngIf="inputEmail.errors.required">Voer een e-mail adres in.</div>
+            <div *ngIf="inputEmail.errors.pattern">Voer een geldig e-mail adres in.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputStreet">Adres</label>
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': inputStreet.touched && inputStreet.errors }"
+            id="inputStreet"
+            placeholder="Straatnaam + huisnr"
+            name="street"
+            ngModel
+            required
+            #inputStreet="ngModel"/>
+          <!-- Error handling for street input -->
+          <div class="alert alert-danger" *ngIf="inputStreet.touched && inputStreet.errors">
+            <div *ngIf="inputStreet.errors.required">Voer uw adres en huisnummer in.</div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-5">
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': inputPostcode.touched && inputPostcode.errors }"
+                id="inputPostcode"
+                placeholder="Postcode"
+                name="postcode"
+                ngModel
+                required
+                #inputPostcode="ngModel"/>
+              <!-- Error handling for postcode input -->
+              <div class="alert alert-danger" *ngIf="inputPostcode.touched && inputPostcode.errors">
+                <div *ngIf="inputPostcode.errors.required">Voer uw postcode in.</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-7">
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': inputCity.touched && inputCity.errors }"
+                id="inputCity"
+                placeholder="Plaats"
+                name="city"
+                ngModel
+                required
+                #inputCity="ngModel"/>
+              <!-- Error handling for city input -->
+              <div class="alert alert-danger" *ngIf="inputCity.touched && inputCity.errors">
+                <div *ngIf="inputCity.errors.required">Voer uw plaatsnaam in.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-7 nav-btn">
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">
+              Direct betalen
+              <i class="fa fa-arrow-right"></i>
+            </button>
+            <p>Betalen via iDEAL, Creditcard… etc.</p>
+          </div>
+          <div class="col-12 col-md-5">
+            <a href="#" id="offer-link">Stuur een offerte</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Navigation buttons -->
+  <div class="row" id="buttons">
+    <div class="col offset-1">
+      <button type="button" class="btn btn-outline-primary bg-light" (click)="onPreviousClick()">
+        <i class="fa fa-arrow-left"></i> Vorige
+      </button>
+    </div>
+  </div>
+</div>
